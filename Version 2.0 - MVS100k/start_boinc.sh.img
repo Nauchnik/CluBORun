@@ -1,0 +1,127 @@
+
+# Это комментарий
+# Следующая строка - название секции
+[General]
+# Далее идет содержимое секции
+# Следующая срока определяет имя задачи
+task_name = start_boinc.sh
+# Следующая срока определяет имя каталога
+# стандартного ввода/вывода
+host_directory = /nethome/posypkin/SAT
+# Следующая срока определяет необходимое число
+# процессоров для выполнения задачи
+# Если указывается значение any, то число процессоров
+# должно быть определено при старте задачи
+#cpu_count = 8
+really_cpu = 8
+cpu_count = 8
+# Следующая строка - название секции
+# Секция не обязательная
+[TimeRequest]
+# Время (по максимуму), необходимое для выполнения задачи,
+# указывается в минутах
+limit = 130
+# количество повторов задачи
+#repeat_times = 
+# значение кванта, указывается в минутах
+# если указать 0, то квант игнорируется (задача не фоновая)
+quant = 0
+
+#
+term_time=0
+term_signal=
+
+[Redirections]
+stdin=
+stdout=
+stderr=
+interactive=no
+[LocalDisks]
+ldm_name= 
+ldm_space= 
+ldm_nodes=1
+#mount_dir=
+[Globus_Conf]
+globus_id=
+[Batch]
+#!/bin/bash
+export CPATH="/opt/intel/composerxe-2011.3.174/mkl/include"
+export CVS_RSH="ssh"
+export FPATH="/opt/intel/composerxe-2011.3.174/mkl/include"
+export G_BROKEN_FILENAMES="1"
+export HISTSIZE="1000"
+export HOME="/nethome/posypkin"
+export HOSTNAME="mvs100k.jscc.ru"
+export INCLUDE="/opt/intel/composerxe-2011.3.174/mkl/include"
+export INPUTRC="/etc/inputrc"
+export INTEL_LICENSE_FILE="/opt/intel/composerxe-2011.3.174/licenses:/opt/intel/licenses:/nethome/posypkin/intel/licenses"
+export LANG="en_US.UTF-8"
+export LD_LIBRARY_PATH="/opt/intel/composerxe-2011.3.174/compiler/lib/intel64:/opt/intel/composerxe-2011.3.174/compiler/lib/intel64:/opt/intel/composerxe-2011.3.174/mkl/lib/intel64:/opt/intel/composerxe-2011.3.174/mpirt/lib/intel64"
+export LESSOPEN="|/usr/bin/lesspipe.sh %s"
+export LIBRARY_PATH="/opt/intel/composerxe-2011.3.174/compiler/lib/intel64:/opt/intel/composerxe-2011.3.174/compiler/lib/intel64:/opt/intel/composerxe-2011.3.174/mkl/lib/intel64"
+export LOGNAME="posypkin"
+export LS_COLORS=""
+export MAIL="/var/spool/mail/posypkin"
+export MANPATH="/opt/intel/composerxe-2011.3.174/man/en_US:/opt/intel/composerxe-2011.3.174/man/en_US::/common/mvapich/man:"
+export MKLROOT="/opt/intel/composerxe-2011.3.174/mkl"
+export NLSPATH="/opt/intel/composerxe-2011.3.174/compiler/lib/intel64/locale/%l_%t/%N:/opt/intel/composerxe-2011.3.174/mkl/lib/intel64/locale/%l_%t/%N"
+export OLDPWD
+export PATH="/opt/intel/composerxe-2011.3.174/bin/intel64:/usr/kerberos/bin:/usr/bin:/bin:/common/runmvs/bin:/common/mvapich/bin/:/opt/intel/composerxe-2011.3.174/mpirt/bin/intel64"
+export PWD="/nethome/posypkin/SAT"
+export SHELL="/bin/sh"
+export SHLVL="4"
+export SSH_ASKPASS="/usr/libexec/openssh/gnome-ssh-askpass"
+export USER="posypkin"
+EnvCommandLine=(
+)
+
+num_nodes=1
+hosts_list="$2"
+exitstatus_file="$3"
+prefix="$4"
+np=8
+tview_flag=
+progname="$4 /nethome/posypkin/SAT/start_boinc.sh"
+mpich_args=""
+cmdLineArgs=" node002.start node002.stop /nethome/posypkin/SAT/ /nethome/posypkin/SAT/node002 7200"
+width_distribution=0
+numofnodes=1
+MPIRUN_HOME=/common/mvapich/bin
+cd "/nethome/posypkin/SAT"
+tmpname=`mktemp machines.XXXXXX` || exit 1
+
+if [  "" ] ;then
+  /common/runmvs/bin/genmachinefile "$hosts_list"  >$tmpname
+  hosts_list=$tmpname
+fi
+
+EnvCommandLine=(  "${EnvCommandLine[@]}" MACHINEFILE_NAME=$hosts_list ) 
+    export LMUTIL=lmutil
+
+
+if [ x = x-totalview ]
+then
+    if ! check_license -c /common/totalview/license.dat -f TV/Base
+    then
+        sleep 1
+        echo 215 >$exitstatus_file
+        exit 215
+    fi
+fi
+
+
+#/mpirun.ch_gm --gm-np $num_nodes --gm-f $tmpname --gm-kill 5  /nethome/posypkin/SAT/start_boinc.sh  node002.start node002.stop /nethome/posypkin/SAT/ /nethome/posypkin/SAT/node002 7200
+#/mpirun.ch_gm -pg  $tmpname  "PATH=/opt/intel/composerxe-2011.3.174/bin/intel64:/usr/kerberos/bin:/usr/bin:/bin:/common/runmvs/bin:/common/mvapich/bin/:/opt/intel/composerxe-2011.3.174/mpirt/bin/intel64"  /nethome/posypkin/SAT/start_boinc.sh  node002.start node002.stop /nethome/posypkin/SAT/ /nethome/posypkin/SAT/node002 7200
+#/common/runmvs/bin/run-mvapich-ib  -np 8 -hostfile $tmpname  /nethome/posypkin/SAT/start_boinc.sh  node002.start node002.stop /nethome/posypkin/SAT/ /nethome/posypkin/SAT/node002 7200
+. /common/runmvs/bin/run-mvapich-ib 
+exitstatus=$?
+#echo exitatus=$exitstatus
+
+if [ 0 -ne 0 ] ; then
+    exitstatus=215
+fi
+
+# rm $tmpname
+echo $exitstatus >$exitstatus_file
+exit $exitstatus
+

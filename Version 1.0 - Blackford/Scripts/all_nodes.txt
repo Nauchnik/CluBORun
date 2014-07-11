@@ -1,0 +1,14 @@
+node000.start node000.stop /home/zaikin/temp/BOINC/node000
+node001.start node001.stop /home/zaikin/temp/BOINC/node001
+node002.start node002.stop /home/zaikin/temp/BOINC/node002
+node003.start node003.stop /home/zaikin/temp/BOINC/node003
+node004.start node004.stop /home/zaikin/temp/BOINC/node004
+node005.start node005.stop /home/zaikin/temp/BOINC/node005
+node006.start node006.stop /home/zaikin/temp/BOINC/node006
+node007.start node007.stop /home/zaikin/temp/BOINC/node007
+node008.start node008.stop /home/zaikin/temp/BOINC/node008
+node009.start node009.stop /home/zaikin/temp/BOINC/node009
+node010.start node010.stop /home/zaikin/temp/BOINC/node010
+node011.start node011.stop /home/zaikin/temp/BOINC/node011
+node012.start node012.stop /home/zaikin/temp/BOINC/node012
+node013.start node013.stop /home/zaikin/temp/BOINC/node013
