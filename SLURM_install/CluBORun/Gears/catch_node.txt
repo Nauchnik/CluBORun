@@ -1,0 +1,14 @@
+#!/bin/bash
+
+. /etc/profile
+
+export CluBORunHome=/home2/mpc1/CluSAT10P/CluBORun
+export GearsDir=$CluBORunHome/Gears
+export InstancesDir=$CluBORunHome/Instances
+export TaskLogsDir=$CluBORunHome/TaskLogs
+export BOINCLibrariesDir=$InstancesDir/BOINC/lib
+
+export LD_LIBRARY_PATH=$BOINCLibrariesDir:$LD_LIBRARY_PATH
+
+cd $TaskLogsDir
+awk -f $GearsDir/catch_node.awk

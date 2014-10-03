@@ -1,0 +1,7 @@
+<rss_feeds>
+  <rss_feed>
+    <url>http://einstein.phys.uwm.edu/rss_main.php</url>
+    <poll_interval>86400.000000</poll_interval>
+    <next_poll_time>0.000000</next_poll_time>
+  </rss_feed>
+</rss_feeds>

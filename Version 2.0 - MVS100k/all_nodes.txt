@@ -1,4 +1,0 @@
-node001.start node001.stop /nethome/posypkin/SAT/ /nethome/posypkin/SAT/node001
-node002.start node002.stop /nethome/posypkin/SAT/ /nethome/posypkin/SAT/node002
-node003.start node003.stop /nethome/posypkin/SAT/ /nethome/posypkin/SAT/node003
-node004.start node004.stop /nethome/posypkin/SAT/ /nethome/posypkin/SAT/node004

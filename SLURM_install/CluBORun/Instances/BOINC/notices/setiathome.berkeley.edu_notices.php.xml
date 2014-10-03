@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+        <rss version="2.0">
+        <channel>
+        <title>SETI@home notices</title>
+        <link>http://setiathome.berkeley.edu/</link>
+        <description>Notices</description>
+        <lastBuildDate>Fri, 14 Feb 2014 17:00:43 GMT</lastBuildDate>
+    <item>
+        <title><![CDATA[SETI@home now supports Intel GPUs]]></title>
+        <link>http://setiathome.berkeley.edu/forum_thread.php?id=73935</link>
+        <guid isPermaLink="true">http://setiathome.berkeley.edu/forum_thread.php?id=73935</guid>
+        <description><![CDATA[
+We've released SETI@home 7.03 for Intel GPUs that support OpenCL 1.2.  If you have an Intel GPU and want to use it to speed up SETI@home make sure that "Use Intel GPU" is set to "yes" in your <a href="http://setiathome.berkeley.edu/prefs.php?subset=project" rel="nofollow">Project Preferences</a>.
+
+Thanks again to the crew at <a href="http://lunatics.kwsn.net" rel="nofollow">lunatics.kwsn.net</a> for porting and testing this app.
+]]></description>
+        <pubDate>Wed, 29 Jan 2014 19:18:22 GMT</pubDate>
+        </item>
+    
+        </channel>
+        </rss>
+    

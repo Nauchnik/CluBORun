@@ -1,0 +1,23 @@
+<notices>
+<notice>
+   <title>CUDA vs nVidia OpenCL User Poll</title>
+   <description><![CDATA[
+Testing is finishing up on the Collatz v6.xx application for CUDA.  Before I release it, I'd like your opinion on how I should configure the scheduler on the server.  Should it:
+
+a) Send the CUDA if available and only send an nVidia OpenCL version if there is no CUDA version for the platform
+
+b) Send the nVidia OpenCL version if available and only send the CUDA version if there is no nVidia OpenCL version for the platform
+
+c) Let the BOINC client learn which is faster over time
+
+Note: The CUDA application uses less than 1% CPU whereas the OpenCL versions use considerably more - sometimes up to 80%.
+]]></description>
+   <create_time>1392382257.000000</create_time>
+   <arrival_time>1392397252.619798</arrival_time>
+   <is_private>0</is_private>
+   <project_name>Collatz Conjecture</project_name>
+   <category></category>
+   <link>http://boinc.thesonntags.com/collatz/forum_thread.php?id=1121</link>
+   <guid>http://boinc.thesonntags.com/collatz/forum_thread.php?id=1121</guid>
+</notice>
+</notices>
