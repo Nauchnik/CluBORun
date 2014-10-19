@@ -1,11 +1,10 @@
-# include <mpi.h>
 # include <iostream>
 # include <fstream>
 # include <string>
 # include <sstream>
 # include <ctime>
 # include <cstdio>
-# include <stdlib.h>
+# include <mpi.h>
 
 using namespace std;
 
@@ -408,13 +407,11 @@ int main(int argsCount, char** argsArray)
 		    // Получение информации о запускаемом экземпляре
 	    	    MPI_Probe(coordinatorId, (MessageTag)InstancePath, MPI_COMM_WORLD, &instancePathStatus);
 	    	    MPI_Get_count(&instancePathStatus, MPI_CHAR, &instancePathBufferSize);
-	    	    instancePathBuffer = new char[instancePathBufferSize+1];
-	    	    instancePathBuffer[instancePathBufferSize] = '\0';
+	    	    instancePathBuffer = new char[instancePathBufferSize];
 	    	    MPI_Recv(instancePathBuffer, instancePathBufferSize, MPI_CHAR, coordinatorId, (MessageTag)InstancePath, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-	    	    instancePath = instancePathBuffer;	    	    
+	    	    instancePath = instancePathBuffer;
 	    	    delete[] instancePathBuffer;
 	    	    cout << "Parallel with ID = " << processId << " get a directive to start a BOINC instance at " << instancePath << endl;
-	    	    cout << "Instance path buffer size: " << instancePathBufferSize << " " << endl;
 	    	    
 	    	    // Запуск экземпляра BOINC	    	
 	    	    chdir(instancePath.c_str());

@@ -2,7 +2,7 @@
 
 . /etc/profile
 
-export CluBORunHome=/home2/mpc1/CluSAT10P/CluBORun
+export CluBORunHome=%CLUBORUN_HOME%
 export GearsDir=$CluBORunHome/Gears
 export InstancesDir=$CluBORunHome/Instances
 export TaskLogsDir=$CluBORunHome/TaskLogs
