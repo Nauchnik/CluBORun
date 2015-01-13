@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+        <rss version="2.0">
+        <channel>
+        <title>Einstein@Home: News</title>
+        <link>http://einstein.phys.uwm.edu/</link>
+        <copyright>Bruce Allen</copyright>
+        <lastBuildDate>Thu, 06 Feb 2014 21:19:10 GMT</lastBuildDate>
+        <language>en-us</language>
+        <image>
+            <url>http://einstein.phys.uwm.edu/rss_image.gif</url>
+            <title>Einstein@Home</title>
+            <link>http://einstein.phys.uwm.edu/</link>
+        </image>
+    <item>
+        <title><![CDATA[Syracuse University moves into first place!]]></title>
+        <link>http://einstein.phys.uwm.edu/forum_thread.php?id=10546</link>
+        <guid isPermaLink="true">http://einstein.phys.uwm.edu/forum_thread.php?id=10546</guid>
+        <description><![CDATA[
+Congratulations to Syracuse University, which has passed the AEI E-Science Group to move into <a href="http://einstein.phys.uwm.edu/top_users.php?sort_by=total_credit" rel="nofollow">FIRST PLACE</a> among Einstein@Home contributors.  Syracuse University has now contributed more computer cycles to the Einstein@Home search than any other participant.   Thank you Syracuse!!
+
+Bruce Allen
+Director, Einstein@Home
+]]></description>
+        <pubDate>Thu, 06 Feb 2014 21:19:10 GMT</pubDate>
+        </item>
+    
+        </channel>
+        </rss>
+    

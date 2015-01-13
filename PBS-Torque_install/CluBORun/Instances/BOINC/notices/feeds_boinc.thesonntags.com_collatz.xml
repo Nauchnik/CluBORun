@@ -1,0 +1,7 @@
+<rss_feeds>
+  <rss_feed>
+    <url>http://boinc.thesonntags.com/collatz/notices.php?userid=40115&auth=40115_517f5087610a203ed38ea0210a4e2b09</url>
+    <poll_interval>86400.000000</poll_interval>
+    <next_poll_time>0.000000</next_poll_time>
+  </rss_feed>
+</rss_feeds>
